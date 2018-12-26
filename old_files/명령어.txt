@@ -1,0 +1,2 @@
+C:\ProgramData\Anaconda3\python teamCommand_discord_V1.py
+python -m cProfile -s tottime file.py
