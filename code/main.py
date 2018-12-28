@@ -6,7 +6,7 @@ from discord.ext import commands
 import discord_logging
 discord_logging.main()
 
-bot = commands.Bot(command_prefix='#')
+bot = commands.Bot(command_prefix='!')
 
 @bot.command()
 async def dice(ctx):
