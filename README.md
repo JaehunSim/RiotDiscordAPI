@@ -18,7 +18,7 @@ discord_logging.py는 디버깅용 로그를 남길때 쓰는 스크립트입니
 2. discord
 
 1번의 라이브러리는 https://winpython.github.io/ 에서 3.6.7버젼 다운받으면 있을거에요. 
-winPython이나 Anaconda[https://www.anaconda.com/download/#windows] 통합 환경 파이썬을 이용하면 
+[winPython](https://winpython.github.io/)이나 [Anaconda](https://www.anaconda.com/download/#windows) 통합 환경 파이썬을 이용하면 
 대부분의 라이브러리가 설치되어서 나옵니다!  
 
 2번의 경우 discord.py-rewrite.zip 파일을 다운받아서 다음 명령어로 설치해줍니다.  
@@ -138,6 +138,17 @@ YOUR_CLIENT_ID을 자신의 것에 맞게 변경하고 들어가면 됩니다.
 3. 키를 복사하고 CREDENTIAL.py 에  RIOT_API_KEY명으로 해당 토큰값을 저장해줍시다!
 
 > RIOT API 토큰은 24시간 내로 만료되기 때문에 주기적으로 REGENERATE 하거나 APP 신청을 해서 반영구적 API KEY를 얻을 수 있습니다.
+
+---
+
+## 챗봇 24시간 구동시키기 (feat AWS EC2)
+
+아마존 웹 서비스(AWS)를 처음 가입하게 되면 프리티어로 1년간 AWS의 다양한 기능을 이용할 수 있어요.  
+우리는 그중에서 EC2(Elastic Compute Cloud) 기능을 이용해보려고 해요.
+제가 간단히 이해한 바로는 CPU - RAM - SSD용량 을 다양하게 조합해서 컴퓨터를 구성한 후(instance라고 불려요) 
+필요한 때에 필요한 만큼 쓸 수 있는 기능이에요.
+우리는 최소사양이면 챗봇을 가동시킬 수 있어서 프리티어급 EC2면 충분해요!
+
 
 
 ---
