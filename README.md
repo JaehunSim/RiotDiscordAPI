@@ -18,6 +18,7 @@ discord_logging.py는 디버깅용 로그를 남길때 쓰는 스크립트입니
 2. discord
 
 1번의 라이브러리는 https://winpython.github.io/ 에서 3.6.7버젼 다운받으면 있을거에요. 
+
 [winPython](https://winpython.github.io/)이나 [Anaconda](https://www.anaconda.com/download/#windows) 통합 환경 파이썬을 이용하면 
 대부분의 라이브러리가 설치되어서 나옵니다!  
 
@@ -144,12 +145,22 @@ YOUR_CLIENT_ID을 자신의 것에 맞게 변경하고 들어가면 됩니다.
 ## 챗봇 24시간 구동시키기 (feat AWS EC2)
 
 아마존 웹 서비스(AWS)를 처음 가입하게 되면 프리티어로 1년간 AWS의 다양한 기능을 이용할 수 있어요.  
-우리는 그중에서 EC2(Elastic Compute Cloud) 기능을 이용해보려고 해요.
+
+우리는 그중에서 EC2(Elastic Compute Cloud) 기능을 이용해보려고 해요.  
+
 제가 간단히 이해한 바로는 CPU - RAM - SSD용량 을 다양하게 조합해서 컴퓨터를 구성한 후(instance라고 불려요) 
-필요한 때에 필요한 만큼 쓸 수 있는 기능이에요.
-우리는 최소사양이면 챗봇을 가동시킬 수 있어서 프리티어급 EC2면 충분해요!
 
+필요한 때에 필요한 만큼 쓸 수 있는 기능이에요.  
 
+우리는 최소사양이면 챗봇을 가동시킬 수 있어서 프리티어급 EC2면 충분해요!  
+
+세팅법은 복잡하니 [링크](http://blog.poin2.com/2016/02/%ED%81%AC%EB%A1%AC%EB%B6%81%EC%9C%88%EB%8F%84%EC%9A%B0%EC%82%AC%EC%9A%A91/)에서 확인!  
+
+EC2를 설치하셨으면 똑같이 파이썬, 소스코드를 받고 실행시키면 돼요.  
+
+프리티어가 쓸 수 있는 t2.micro 를 이용한다면 1년간 24/7 무료로 챗봇을 구동시킬 수 있어요.  
+
+EC2 instance는 반드시 하나만 생성하고 더 만들면 stop이나 terminate(완전 삭제)를 하셔야 과금이 안돼요.  
 
 ---
 
