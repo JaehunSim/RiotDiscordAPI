@@ -125,8 +125,16 @@ https://discordapp.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot
 YOUR_CLIENT_ID을 자신의 것에 맞게 변경하고 들어가면 됩니다.
 
 ---
+
 ## 라이엇 API 설정법
 
+1. 라이엇 개발자 포털에 들어갑니다. (https://developer.riotgames.com/)
+
+2. DEVELOPMENT API KEY를 발급 받습니다. reCaptcha 버튼을 누르시고 REGENERATE API KEY를 누르시면 돼요.
+
+3. 키를 복사하고 CREDENTIAL.py 에  RIOT_API_KEY명으로 해당 토큰값을 저장해줍시다!
+
+> RIOT API 토큰은 24시간 내로 만료되기 때문에 주기적으로 REGENERATE 하거나 APP 신청을 해서 반영구적 API KEY를 얻을 수 있습니다.
 
 
 ---
