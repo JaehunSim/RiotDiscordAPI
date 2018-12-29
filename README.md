@@ -17,7 +17,10 @@ discord_logging.py는 디버깅용 로그를 남길때 쓰는 스크립트입니
 1. numpy, pandas, sklearn 
 2. discord
 
-1번의 라이브러리는 https://winpython.github.io/ 에서 3.6.7버젼 다운받으면 있을거에요.  
+1번의 라이브러리는 https://winpython.github.io/ 에서 3.6.7버젼 다운받으면 있을거에요. 
+winPython이나 Anaconda[https://www.anaconda.com/download/#windows] 통합 환경 파이썬을 이용하면 
+대부분의 라이브러리가 설치되어서 나옵니다!  
+
 2번의 경우 discord.py-rewrite.zip 파일을 다운받아서 다음 명령어로 설치해줍니다.  
 `python -m pip install discord.py-rewrite.zip`
 
