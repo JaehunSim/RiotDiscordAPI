@@ -6,37 +6,67 @@ python 으로 만든 discord bot입니다. 간략한 소스코드 설명입니�
 2. discord_command.py: 명령어 함수가 들어있는 스크립트입니다. 반복 사용하는 함수는 따로 저장하고 불러와서 씁니다.
 3. summoner_info.py: riotAPI를 다룰때 쓰는 스크립트입니다. 
 4. util.py: db를 초기화시키거나, 경로 설정 및 불러오기를 할 때 쓰는 스크립트입니다. 토큰코드는 CREDENTIAL.py 에 저장해서 불러와야 합니다.
-> discord 봇 토큰이나 riotAPI에 쓸 토큰의 경우 깃허브에 올리면 큰일납니다!! 도용가능성 99%. 반드시 따로 저장하고 업로드 하지 맙시다.
+> discord 봇 토큰이나 riotAPI에 쓸 토큰의 경우 깃허브에 올리면 큰일납니다!! 
 
-이외에 discord_func.py, minDiffPartitioning.py는 명령어에서 자주 쓰이는 함수를 저장한 코드고
+> 도용가능성 99%. 반드시 따로 저장하고 업로드 하지 맙시다.
+
+이외에 discord_func.py, minDiffPartitioning.py는 명령어에서 자주 쓰이는 함수를 저장한 코드고  
 discord_logging.py는 디버깅용 로그를 남길때 쓰는 스크립트입니다. 
+
+사용한 라이브러리
+1. numpy, pandas, sklearn 
+2. discord
+
+1번의 라이브러리는 https://winpython.github.io/ 에서 3.6.7버젼 다운받으면 있을거에요.  
+2번의 경우 discord.py-rewrite.zip 파일을 다운받아서 다음 명령어로 설치해줍니다.  
+`python -m pip install discord.py-rewrite.zip`
+
 
 ---
 
 위 봇은 아래와 같이 작동합니다.  
-`!help` `!food_list`  
+  
+  
+`!guide` : 명령어 입력 방법을 출력해줍니다.
 
 ![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
 
-`!food`  
+`!guide` : 명령어 입력 방법을 출력해줍니다.
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/1food.gif)
+![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
 
-`!no`  
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/2no.gif)
+`!guide` : 명령어 입력 방법을 출력해줍니다.
 
-`!location` `!yes`  
+![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/3locationyes.gif)
 
-`!visualize`  
+`!guide` : 명령어 입력 방법을 출력해줍니다.
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/5visualize.gif)
+![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
 
-`evaluation`  
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/6evaluation.gif)
+`!guide` : 명령어 입력 방법을 출력해줍니다.
+
+![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+
+
+`!guide` : 명령어 입력 방법을 출력해줍니다.
+
+![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+
+`!guide` : 명령어 입력 방법을 출력해줍니다.
+
+![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+
+
+`!guide` : 명령어 입력 방법을 출력해줍니다.
+
+![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+
+
+
+
 
 ---
 
