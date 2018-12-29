@@ -29,60 +29,61 @@ discord_logging.py는 디버깅용 로그를 남길때 쓰는 스크립트입니
   
 `!guide` : 명령어 입력 방법을 출력해줍니다.
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/01.%20guide.gif)
 
 `!dice` : 주사위 1~100 까지 굴리기
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/02.%20dice.gif)
 
 
 `!voice` : 자신이 있는 채널 맴버들 출력
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/03.%20voice.gif)
 
 
 `!rank` : !rank 아이디: Rank 확인하기
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/04.%20rank.gif)
 
 
 `!most` : !most 아이디: MostN 확인하기. default: N=3, 기간=1
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/05.%20most.gif)
 
 
 `!most N 기간` :  !most 아이디 N 기간: MostN 확인하기. 기간은 0~5 사이 지정. default: N=3, 기간=1
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/06.%20mostN.gif)
+
 
 `!position` :  !position id1 id2 id3 id4 id5: 5명 팀일때 포지션 자동 분배하기
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/07.%20position.gif)
 
 
 `!team` :  !team id1 id2 ... id10: 내전 10명일때 팀,포지션 자동 분배하기
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/08.%20team.gif)
 
 
 `!setrank` : !setrank id1 rank number: id1의 rank를 수정합니다.
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/09.%20setrank.gif)
 
 
 `!register` : !register id1: 자신의 discord 아이디를 id1으로 등록합니다.
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/10.%20register.gif)
 
 
 `!register2` : !register2 id#tag id1: id#tag의 discord 아이디를 id1으로 등록합니다.
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/11.%20register2.gif)
 
 
 `!predict` : !predict chmp1 chmp2 ... chmp10: 탑, 정글, 미드, 원딜, 서폿 순으로 두팀씩 조합을 제시해줬을 때, 어느 팀이 유리한지 예측해줍니다.
 
-![](https://raw.githubusercontent.com/JaehunSim/food_recommend_slack_bot/master/slack_bot/doc/4helpfood_list.gif)
+![](https://raw.githubusercontent.com/JaehunSim/RiotDiscordAPI/master/images/12.%20predict.gif)
   
 ---
 
