@@ -170,9 +170,60 @@ EC2 instance는 반드시 하나만 생성하고 더 만들면 stop이나 termin
 
 ```
 #main.py: 봇을 실행시킬때 쓰는 소스입니다. 
+1. 로그 기록을 시작.
+2. 봇 command_prefix 정의 # "!"으로 지정했음
+3. 봇 command 작성
+4. 디스코드 토큰으로 봇 실행
 
-#discord_command.py: 봇에 명령어를 추가하고 싶을 때 이 소스부분에 넣으면 됩니다.
-소스 설명은 추후에 추가할 예정!
+#discord_command.py: 봇에 명령어를 추가하고 싶을 때 여기에 넣으면 됩니다.
+1. dice
+2. guide
+3. register
+  1. discordNickNameChange.csv 파일에 아이디#tag와 arg1을 저장
+  2. 이미 db에 아이디#tag가 있으면 확인후 수정, 없으면 생성
+4. register2
+  1. 3번에서 남의 아이디까지 수정할 수 있도록 기능 확장 (class로 구현하면 확장이 편했을 것 같다.)
+5. voice
+  1. discordNickNameChange.csv에서 키가 있다면 해당 값 출력
+  2. 없으면 기본 닉네임 출력
+6. most
+7. rank
+8. setrank
+  1. summonerNameData.csv에서 티어 부분 수동 수정
+9. position
+  1. 플레이어들의 전적 검색을 통해 주요 플레이 포지션을 구해온다.
+  2. 선호 포지션 TOP2를 각각 찾는다.
+  3. 선호 포지션에 배치될 수 있게 각 플레이어들의 포지션을 배치해준다.
+10. team #position과 겹치는 부분이 있다. 
+  1. 10명의 플레이어들을 먼저 티어에 맞게 나누고 (min_diff_sets, getUniqueDivSets)
+  2. 선호 포지션에 따라 플레이어들의 포지션을 배치해준다.
+  3. 3가지 경우를 출력해준다.
+11. team2 #15명일때 5,5,5 씩 나누는 방법
+12. predict
+  1. 예측에 필요한 모델, 데이터 가공에 필요한 데이터를 불러온다. 각각 RF_MODEL, ptpDFList다.
+  2. 10명의 챔피언이 탑, 정글, 미드, 원딜, 서폿 *2 순으로 들어왔을 때 이를 가공한다.
+  3. 가공한 데이터를 모델에 넣고 승리확률을 예측한다. #winRate = RF_MODEL.predict_proba(data4)[:,1]
+  
+#discord_func.py: 
+1. updateSummoner: 소환사 이름을 API를 통해 검색하고 rank를 받아온다. 이를 summonerNameData에 저장한다.
+2. getDivTeamList: 포지션, 랭크를 고려해 10명의 플레이어들을 나누는 방법
+
+#summoner_info.py: 
+1. getDataFromURL
+2. getSummonerId
+3. getSummonerRank
+4. getRankScore
+5. getRankLog
+6. getMostN
+7. getPositionPreference
+8. getChampionPlayedList
+9. predictPosition
+
+#minDiffPartitioning.py
+팀을 나눌때 쓰인다.
+
+#util.py
+db를 초기화시키거나, 경로 설정 및 불러오기를 할 때 쓰는 스크립트입니다. 토큰코드는 CREDENTIAL.py 에 저장해서 불러와야 합니다.
 
 ```
 
