@@ -25,6 +25,8 @@ discord_logging.py는 디버깅용 로그를 남길때 쓰는 스크립트입니
 2번의 경우 discord.py-rewrite.zip 파일을 다운받아서 다음 명령어로 설치해줍니다.  
 `python -m pip install discord.py-rewrite.zip`
 
+마지막으로 predict 명령어를 이용하기 위해 쓸 머신러닝 모델을 다운받아야 합니다. [링크](https://drive.google.com/open?id=1dAQR8RUW2D3CZ57UK5mlhw3LlBDIS_v0)  
+이 파일을 db파일에 넣어줍시다!
 
 ---
 
