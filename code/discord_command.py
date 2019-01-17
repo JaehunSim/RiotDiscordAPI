@@ -95,30 +95,38 @@ def _rank(arg1, errorName):
         a, b, data = updateSummoner(data, [arg1],errorName)
     except ValueError: 
         return "Summoner Name Not Found: {0}".format(errorName[0])
-    except Exception:
-        return "UnRank Detected: {0}".format(errorName[0])
+    
+    warningText= ""
+    for i in range(len(errorName)):
+        warningText += "UnRank Detected: {0} (Default: SILVER II)\n".format(errorName[i])
     
     index = data[data["summonerName"] == arg1].index[0]
     rank = data["rank"][index]
-    return "{0}님의 Tier: {1}".format(arg1,rank)
+    return "{2}{0}님의 Tier: {1}".format(arg1,rank,warningText)
         
-def _setrank(arg1, arg2,arg3):
+def _setrank(arg1, arg2,arg3, errorName):
     arg1= arg1.lower()
     arg2= arg2.upper()
     arg3 = arg3.upper()
-    if arg2 not in ["BRONZE", "SILVER", "GOLD", "PLATINUM", "DIAMOND", "MASTER"]:
+    if arg2 not in ["IRON", "BRONZE", "SILVER", "GOLD", "PLATINUM", "DIAMOND", "MASTER"]:
         return "Wrong rank input: {0}".format(arg2)
     if arg3 not in ["I","II","III","IV"]:
         return "Wrong number input: {0}".format(arg3)
     rank = arg2+ " "+ arg3
     data = pd.read_csv(DB_PATH + '\\summonerNameData.csv', encoding="euc-kr")
     length = len(data[data["summonerName"]==arg1])
+    
+    warningText = ""
     if length == 0:
-        return "다음은 등록되지 않은 소환사입니다: {0}".format(arg1)        
+        warningText =  "다음은 등록되지 않은 소환사입니다(오타 여부 체크!!): {0}\n".format(arg1)
+        result = _rank(arg1, errorName)
+        if "Summoner Name Not Found" in result:
+            return result
+        data = pd.read_csv(DB_PATH + '\\summonerNameData.csv', encoding="euc-kr")
     originalRank = data.loc[data[data["summonerName"]==arg1].index[0],["rank"]][0]
     data.set_value(data[data["summonerName"]==arg1].index[0],"rank",rank)
     data.to_csv(DB_PATH + '\\summonerNameData.csv', index=False, encoding="euc-kr")
-    return "{0}님의 Tier가 {1} 에서 {2}로 변경됐습니다.".format(arg1,originalRank,rank)
+    return "{3}{0}님의 Tier가 {1} 에서 {2}로 변경됐습니다.".format(arg1,originalRank,rank,warningText)
 
 def _position(arg1, arg2, arg3, arg4, arg5, errorName):
     data = pd.read_csv(DB_PATH + '\\summonerNameData.csv', encoding="euc-kr")
@@ -218,8 +226,12 @@ def _team(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, errorName
         rankScoreList,rankList,data = updateSummoner(data, summonerNameList, errorName)
     except ValueError: 
         return "Summoner Name Not Found: {0}".format(errorName[0])
-    except Exception:
-        return "UnRank Detected: {0}".format(errorName[0])
+    
+    warningText= ""
+    for i in range(len(errorName)):
+        warningText += "UnRank Detected: {0}\n".format(errorName[i])
+    if warningText != "":
+        warningText = "%%%%%%Warning%%%%%%%\n" + warningText
         
     rankScoreOnly = []
     for i in rankScoreList:
@@ -244,7 +256,7 @@ def _team(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, errorName
             for positInfo in team:
                 text+= ('{0:<3}: {1:<12} '.format(positInfo[1],positInfo[0]))
             cases.append(text)
-    finalText = ""
+    finalText = warningText
     for i in range(len(cases)):
         if i %2 ==0:
             finalText += "Case: {0}\n".format(int((i+2)/2))
@@ -256,7 +268,15 @@ def _team(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, errorName
         if i%2 == 1:
             finalText += "\n"
     time_took = round(time.time() - start,3)
-    finalText += 'Time Taken: {} seconds'.format(time_took)
+    count = 0
+    for i in rankList:
+        text = "{0}: {1} ".format(i[0], i[1])
+        finalText += "{0:<25}".format(text)
+        count+=1
+        if count > 3:
+            finalText += "\n"
+            count = 0
+    finalText += '\nTime Taken: {} seconds'.format(time_took)
     return finalText
 
 def _team2(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, errorName):

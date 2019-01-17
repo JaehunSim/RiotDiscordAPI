@@ -37,6 +37,7 @@ def updateSummoner(data, summonerNameList, errorName, update_period=7):
         #update
         if not gotId:
             changed = True
+            unRankWarning = False
             
             temp = getSummonerId(summonerName)
             if temp == "error":
@@ -48,16 +49,21 @@ def updateSummoner(data, summonerNameList, errorName, update_period=7):
             rank = getSummonerRank(summonerId)
             if rank=="UnRank":
                 errorName.append(summonerName)
-                raise Exception("UnRank is in Input")
+                unRankWarning = True
+                rank = "SILVER II"
                 
             rankScore = getRankScore(rank)
             rankScoreList.append([summonerName,rankScore])   
             
             rankList.append([summonerName,rank])
             
-            rankLog = getRankLog(accountId)
-            pp = getPositionPreference(rankLog,2)
-            
+            if not unRankWarning:
+                rankLog = getRankLog(accountId)
+                pp = getPositionPreference(rankLog,2)
+            else:
+                normalLog = getRankLog(accountId, queue=430)
+                pp = getPositionPreference(normalLog,2)
+                
             updated_date = today.strftime('%Y-%m-%d')
             data = data.append({"summonerName":summonerName,"summonerId":summonerId,"accountId":accountId,"rank":rank,
                                 "pp":pp,"updated_date":updated_date},ignore_index=True)

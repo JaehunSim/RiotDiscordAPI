@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
-from util import DISCORD_TOKEN, RF_MODEL, ptpDFList
+﻿# -*- coding: utf-8 -*-
+from util import DISCORD_TOKEN,DISCORD_TOKEN_TEST, RF_MODEL, ptpDFList
 #from util import initialize, initialize_discord
 from discord_command import _dice, _guide, _register, _register2, _voice, _most, _rank, _setrank, _position, _team, _team2, _predict
 from discord.ext import commands
@@ -51,7 +51,8 @@ async def rank(ctx, arg1):
     
 @bot.command()
 async def setrank(ctx, arg1, arg2,arg3):
-    text = _setrank(arg1,arg2,arg3)
+    errorName = []
+    text = _setrank(arg1,arg2,arg3, errorName)
     await ctx.send(text)
     
 @bot.command()
